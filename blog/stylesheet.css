@@ -4,6 +4,6 @@ body {
   margin: 20px;
 }
 img {
-  max-width: 600px;
-  align: middle;
+  width: 300px;
+  text-align: center;
 }

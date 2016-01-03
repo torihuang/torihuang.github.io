@@ -1,9 +1,13 @@
 body {
   font-family: sans-serif;
   font-weight: 100;
-  margin: 20px;
+  margin: 50px;
 }
 img {
   width: 300px;
+  text-align: center;
+}
+
+h3 {
   text-align: center;
 }

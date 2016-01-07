@@ -1,12 +1,12 @@
 
 @font-face {
   font-family: AvenirBook;
-  src: url('/Users/tori/DevBootcamp/Phase0/torihuang.github.io/fonts/AvenirLTStd-Book.otf');
+  src: url('http://torihuang.github.io/blog/fonts/AvenirLTStd-Book.otf');
 }
 
 @font-face {
   font-family: SignPainterHouseScript;
-  src: url('/Users/tori/DevBootcamp/Phase0/torihuang.github.io/fonts/SignPainter-HouseScript.ttf');
+  src: url('http://torihuang.github.io/blog/fonts/SignPainter-HouseScript.ttf');
 }
 
 body {

@@ -48,6 +48,34 @@ nav ul li a {
   text-decoration: none;
 }
 
+a {
+  color: #F28C01;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3ACCA9;
+}
+
+#blog-content {
+  display: block;
+  text-align: center;
+}
+
+table {
+  max-width: 500px;
+  margin: 20px auto;
+  border-spacing: 20px;
+}
+
+td {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 500px;
+}
+
 article {
   padding: 20px;
   width:70%;
@@ -57,13 +85,13 @@ article {
   text-align: center;
 }
 
-h1 {
+article h1 {
   font-family: SignPainterHouseScript;
   font-size: 60px;
   text-align: center;
 }
 
-h2 {
+article h2 {
   font-size: 14px;
   font-weight: lighter;
   text-align: center;

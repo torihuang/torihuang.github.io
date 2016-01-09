@@ -13,6 +13,11 @@ body {
   font-family: AvenirBook;
 }
 
+img {
+  max-width: 100%;
+  text-align: center;
+}
+
 nav {
   margin: 10 10 10 10;
   padding-bottom: 10px;
@@ -82,7 +87,7 @@ article {
   margin: 0 auto;
   display: block;
   font-family: AvenirBook;
-  text-align: center;
+  text-align: left;
 }
 
 article h1 {
@@ -94,6 +99,10 @@ article h1 {
 article h2 {
   font-size: 14px;
   font-weight: lighter;
+  text-align: center;
+}
+
+article h3 {
   text-align: center;
 }
 

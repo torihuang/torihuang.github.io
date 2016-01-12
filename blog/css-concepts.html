@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel='shortcut icon' href='imgs/favicon.png' type='image/x-icon'/ >
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel='shortcut icon' href='../imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/blog.css">
   <title>Tori Huang Blog</title>
 </head>
 <body>
   <nav>
-      <img src="http://torihuang.github.io/blog/imgs/logo.png" id="logo" alt="Logo">
+      <img src="../imgs/logo.png" id="logo" alt="Logo">
 
       <ul>
         <li><a href="http://torihuang.github.io/blog">Blog</a></li>
@@ -20,14 +20,136 @@
 
   <main>
     <article>
-      <h1>Blog Post Title</h1>
-      <h2>Date Blog was written</h2>
+      <h1>Positioning with HTML</h1>
+      <h2>1/12/16</h2>
 
-      <img src="http://torihuang.github.io/blog/imgs/dog-in-a-bowtie.png" alt="Blog Image">
+      <section>
+        <h3>What We'll Learn</h3>
+        <p>
+          Does it seem like every time you try to position a node in CSS, it's down to trial and error? Positioning can be a tricky subject if you do not fully understand the attribute and how to it works between children and their ancestors.
+        </p>
+        <p>
+          This blog post is a brief review of html positioning including the difference between static, relative, fixed, and absolute positioning. In addition to positioning, we will review the z-index property, what it does, and why you need it (Hint: It is very useful when elements start to overlap). There are also a few very handy resources I used to help understand this topic listed at the bottom of the page. If this post does not give you a truly solid understanding of positioning in CSS, please look at these resources to help complete your understanding!
+        </p>
+      </section>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac ipsum ligula. Praesent id nunc ac metus cursus lacinia cursus at est. Donec finibus a elit nec tempor. Nunc finibus magna ac diam feugiat, pellentesque bibendum ipsum suscipit. Curabitur sagittis felis non dui pellentesque interdum. Suspendisse potenti. Curabitur in porta est. Proin non enim ipsum. Aliquam erat volutpat. Cras placerat turpis eros, ut iaculis tellus porta sit amet. Maecenas pulvinar at leo a hendrerit. Vestibulum bibendum, purus nec ornare rutrum, massa massa pretium risus, non laoreet enim nunc sed augue.
-      </p>
+      <section>
+        <h3>What is Positioning</h3>
+        <p>
+          Positioning in CSS defines where you place an element on the page. It is a property assigned to an element. Check out the code below to see how a relative position would be assigned to main.
+          <pre>
+            main {
+              position: relative;
+            }
+          </pre>
+        </p>
+
+        <p>
+          There are four different assignments for positioning: Static, relative, absolute, and fixed.
+        </p>
+
+        <h4>Static</h4>
+        <p>
+          This is every element's position by default. You do not need to worry about defining an element's position as static, unless you are working to override a previous position command.
+
+          <pre>
+            main {
+              position: static;
+            }
+          </pre>
+        </p>
+
+        <h4>Relative</h4>
+        <p>
+          First, you need to remember that static is an element's default position. This is where an element would naturally fall without any outside adjustment. Relative positioning means placing the element <em>relative</em> to that static position. Relative to where the element would normally be placed.
+        </p>
+        <pre>
+          main {
+            position: relative;
+            top: -20px;
+            left: 10px;
+          }
+        </pre>
+        <p>
+          The code above places element <code>main</code> about -20 pixels up and 10 pixels to the left of where it would have been otherwise.
+        </p>
+
+        <h4>Fixed</h4>
+        <p>
+          A fixed element is positioned relative to the viewport. That means this element moves with the page as the user scrolls. Scroll up, scroll down, scroll all around. It doesn't matter to the example below. <code>main</code> will <em>always</em> be just 50 pixels from the top and 30 pixels from the right of your viewport.
+        </p>
+        <pre>
+          main {
+            position: fixed;
+            top: 50px;
+            right: 30px;
+          }
+        </pre>
+
+        <h4>Absolute</h4>
+        <p>
+          Absolute can be the trickiest position to understand. When an element is defined as absolute, it is positioned relative to the nearest positioned ancestor. If there is no such ancestor, the element is positioned relative to the page and will almost act as a fixed element, moving as the user scrolls.
+        </p>
+        <pre>
+          main {
+            position: absolute;
+            top: 30px;
+          }
+        </pre>
+        <p>
+          Again, absolute says the element is placed relative to the nearest <em>positioned</em> ancestor. That means the parent, grandparent, etc. closest to the element that has a defined position (not static, but something like <code>position:relative</code>). For example, if an element of class <code>#section2</code> was the child of <code>#section1</code>, in order for <code>#section2</code> to be absolute relative to <code>#section1</code>, the code would have to look something like this:
+        </p>
+        <pre>
+          #section1 {
+            position: relative;
+          }
+
+          #section2 {
+            position: absolute;
+            top: 30px;
+          }
+        </pre>
+        <p>
+          If you are still unsure about absolute positioning, please check out some of the links at the end of this article.
+        </p>
+      </section>
+
+      <section>
+        <h3>Bonus: About the z-index</h3>
+        <p>
+          So where does the <code>z-index</code> come in? The <code>z-index</code> is relative when elements overlap. As you start positioning things around a page it is likely they will hide or cover each other. When your elements begin to overlap, you can use the <code>z-index</code> to assign an order of elements, also known as a stack order of elements. The <code>z-index</code> can be negative or positive!
+        </p>
+        <p>
+          Take the code below. In this case, the <code>img</code> would show up before the <code>article</code>, as it has a higher <code>z-index</code>, while the <code>aside</code> would be below everything else with a value of -1.
+        </p>
+        <pre>
+          img {
+            z-index: 2;
+          }
+
+          article {
+            z-index: 1;
+          }
+
+          aside {
+            z-index: -1;
+          }
+        </pre>
+        <p>
+          Now, imagine for a second that the <code>z-index</code> for these elements was never defined. What would the new order be? HTML automatically places elements at the bottom of the HTML code on top. The new order would be <code>aside</code>, <code>article</code>, <code>img</code>.
+        </p>
+      </section>
+
+      <section>
+        <h3>Resources</h3>
+        <p>
+          Thanks for taking a look at the CSS positioning attribute with me! I aquired all this information from some really great sites. If you would like to learn more about positioning, and maybe complete some tutorials, please check out the resources below.
+        </p>
+        <ul>
+          <li><a href="http://www.w3schools.com/css/css_positioning.asp">W3Schools CSS Positioning - Learn and try yourself</a></li>
+          <li><a href="http://learnlayout.com/position.html">Learn Layout - Positioning through examples</a></li>
+          <li><a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">Barely Fitz - Great 10 step tutorial on positioning</a></li>
+        </ul>
     </article>
   </main>
 

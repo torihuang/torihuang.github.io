@@ -12,6 +12,11 @@ body {
   font-family: AvenirBook;
 }
 
+img {
+  max-width: 100%;
+  text-align: center;
+}
+
 nav {
   margin: 10 10 10 10;
   padding-bottom: 10px;
@@ -47,37 +52,43 @@ nav ul li a {
   text-decoration: none;
 }
 
+a {
+  color: #F28C01;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3ACCA9;
+}
+
 #blog-content {
-  display:block;
-}
-
-#my-image {
-  display:inline-block;
-  max-width: 300px;
-  padding: 20px;
-  vertical-align: middle;
-}
-
-#welcome {
-  display: inline-block;
-  max-width: 50%;
-  padding: 20px;
-  vertical-align: middle;
-}
-
-h1 {
-  font-family: SignPainterHouseScript;
-  font-size: 30px;
+  display: block;
   text-align: center;
 }
 
-p {
-  font-size: 14px;
+article {
+  padding: 20px;
+  width:70%;
+  margin: 0 auto;
+  display: block;
+  font-family: AvenirBook;
+  text-align: left;
 }
 
-#welcome a {
-  color: #F28C01;
-  text-decoration: none;
+article h1 {
+  font-family: SignPainterHouseScript;
+  font-size: 60px;
+  text-align: center;
+}
+
+article h2 {
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+article h3 {
+  text-align: center;
 }
 
 footer {

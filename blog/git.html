@@ -1,94 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='../imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/blog.css">
   <title>Tori Huang Blog</title>
 </head>
 <body>
   <nav>
-      <img src="http://torihuang.github.io/blog/imgs/logo.png" id="logo" alt="Logo">
+      <img src="../imgs/logo.png" id="logo" alt="Logo">
 
       <ul>
-        <li><a href="#">Blog</a></li>
+        <li><a href="http://torihuang.github.io/blog">Blog</a></li>
         <li><a href="#">Praise</a></li>
         <li><a href="#">Projects</a></li>
-        <li><a href="#">Home</a></li>
+        <li><a href="http://torihuang.github.io">Home</a></li>
       </ul>
   </nav>
 
-  <div id="line"></div>
+  <main>
+    <article>
+      <h1>Using Git for the First Time</h1>
+      <h2>1/3/15</h2>
 
-  <article>
-    <h1>Using Git for the First Time</h1>
-    <h2>1/3/15</h2>
-
-    <h3>What Git Is and What It's Not</h3>
-    <p>
-      To get started, you need to understand a few things. Git is version control. Git is the most popular form of version control, because it is awesome. Git is <strong>not</strong> the same as GitHub. GitHub is git, but git is not GitHub.
-    </p>
-    <h3>Version Control</h3>
-    <p>
-      Let's go through those one by one! First, what is version control?
-    </p>
-    <p>
-      Version control, according to a google search, is "the task of keeping a software system consisting of many versions and configurations well organized". Why is version control so important? Because coding gets complicated. Every single character that is entered in your code will make a difference to the outcome of your project. What happens when you leave a project for a few days, then return to that project and accidentally forget to add an end parenthesis or, god forbid, a semi-colon? Everything will blow up.
-    </p>
-    <img src="Iron_Man_Leviathan.png" alt="Leviathan destroys all">
-    <p>
-      Without version control, you might have no idea what changes you made since your last update. Version control allows you to see those changes and control them in an effective way.
-    </p>
-    <h3>All About git</h3>
-    <p>
-      Git is a version control system for software development. It is the most widely used system of version control!
-    </p>
-    <p>
-      Let's take the previous scenario one step further. Why is git the most popular version control method? With git not only can you see what changes you made, you can actually revert back to that working version you had from last Monday! It's pretty nifty.
-    </p>
-    <p>
-      The previous example is with just one developer, working on one project. Now imagine for me a <strong>team</strong> of developers working on a <strong>huge</strong> multi-million dollar product. They are going to need a way for everyone to work on the same code, at the same time, constantly, without breaking the product every other day!
-    </p>
-    <p>
-      This is where git saves the day again. git allows you to create these things called branches. The best explanation I have heard to explain how branches work, is by comparing a project in git to a parallel universe. Imagine your life, as it is now, as a master branch. It is a nice, solid line, travelling from your birth to present day. Now imagine we could make an infinite number of branches from your life as it is now, to how it could be in 10 years. Maybe in one branch you become a chemistry teacher who discovers he has cancer and turns to a life of crime and drug dealing to help his family before he dies.
-    </p>
-    <img src="Breaking-Bad.png" alt="Breaking Bad">
-    <p>
-      In another, you become the first person to step on to Mars, but then are tragically left on the planet by your devoted crew after a freak storm throws a satellite piece through your spacesuit and they assume you are left for dead.
-    </p>
-    <img src="The-Martian.png" alt="The Martian">
-    <p>
-      In another life, you become a git master and understand everything there is to know about version control.
-    </p>
-    <p>
-      You can see how each of your different life scenarios has played out. Now, imagine you can pick just one of these scenarios and integrate that to your master branch, to your actual life. That is a lot like git! You can play out these different scenarios, before you commit them to your master branch, your final product.
-    </p>
-    <p>
-      Now, imagine you pick one of the scenarios, but a few weeks in to living your new life, you decide it's actually not for you. With git, you can now revert back to a previous point in your life. In git, when you commit a new branch (it's a lot like saving your work, and adding details of what has been saved since the last update), you are creating a sort of checkpoint. You can revert back to this checkpoint at any time. So, for example, you could go back those ten years + a few weeks to your life exactly as it is today, before you were stranded on Mars, and select a better path, like becoming a git master!
-    </p>
-    <p>
-      If none of these crazy analogies are working for you, try taking a look at this diagram from www.atlassian.com. Circles represent a commit, aka a save/checkpoint, for each branch. On top you see the master branch. The commits for this master branch also list the version number, as it's the main branch representing actual releases of an updated product. Below the master branch, you see various branchs (like alternate realities!) that are periodically merged with the master branch or each other as the team decides the work can be integrated.
-    </p>
-    <img src="https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/02/pageSections/06/contentFullWidth/0/content_files/file0/document/git-workflow-release-cycle-2feature.png" alt="Git flow">
-    <h3>Git vs. GitHub</h3>
-    <p>
-      By this point, hopefully you have a better idea of what version control is, how it is related to git, and why it is important. So, finally, we get to the difference between git and GitHub.
-    </p>
-    <p>
-      Rectangles are squares, but squares are not rectangles. That is a lot like git and GitHub! GitHub is a community of git practitioners. GitHub provides a place for everyone who utilizes git to share their information publically, with a select group of peers, or not at all. GitHub stores things online. GitHub is amazing!
-    </p>
-    <p>
-      Git is a widely used version control system. Git utilizes the command line, a powerful but somewhat more difficult way to view your code history. GitHub is a git hosting service, which utilizes a graphical user interface to display your code's version history. It's beautiful, easy to use, and all around great.
-    </p>
-    <p>
-      If you're still not sure what GitHub is, check out this <a href="http://techcrunch.com/2012/07/14/what-exactly-is-github-anyway/">TechCrunch article</a> going in to further detail about GitHub and all it's usefulness.
-    </p>
-    <h3>The Best Learning is Doing</h3>
-    <p>
-      Now go out and try it yourself! There are plenty of online tutorials introducing people to the basics of how to get started on git and GitHub.
-    </p>
-    <p>
-      I personally recommend <a href="http://rogerdudler.github.io/git-guide/">this website</a>. It is <strong>very</strong> basic and a great way to get through those tough first steps. Thanks for reading, and happy coding!
-    </p>
-  </article>
+      <section>
+        <h3>What Git Is and What It's Not</h3>
+        <p>
+          To get started, you need to understand a few things. Git is version control. Git is the most popular form of version control, because it is awesome. Git is <strong>not</strong> the same as GitHub. GitHub is git, but git is not GitHub.
+        </p>
+      </section>
+      <section>
+        <h3>Version Control</h3>
+        <p>
+          Let's go through those one by one! First, what is version control?
+        </p>
+        <p>
+          Version control, according to a google search, is "the task of keeping a software system consisting of many versions and configurations well organized". Why is version control so important? Because coding gets complicated. Every single character that is entered in your code will make a difference to the outcome of your project. What happens when you leave a project for a few days, then return to that project and accidentally forget to add an end parenthesis or, god forbid, a semi-colon? Everything will blow up.
+        </p>
+        <img src="Iron_Man_Leviathan.png" alt="Leviathan destroys all">
+        <p>
+          Without version control, you might have no idea what changes you made since your last update. Version control allows you to see those changes and control them in an effective way.
+        </p>
+      </section>
+      <section>
+        <h3>All About git</h3>
+        <p>
+          Git is a version control system for software development. It is the most widely used system of version control!
+        </p>
+        <p>
+          Let's take the previous scenario one step further. Why is git the most popular version control method? With git not only can you see what changes you made, you can actually revert back to that working version you had from last Monday! It's pretty nifty.
+        </p>
+        <p>
+          The previous example is with just one developer, working on one project. Now imagine for me a <strong>team</strong> of developers working on a <strong>huge</strong> multi-million dollar product. They are going to need a way for everyone to work on the same code, at the same time, constantly, without breaking the product every other day!
+        </p>
+        <p>
+          This is where git saves the day again. git allows you to create these things called branches. The best explanation I have heard to explain how branches work, is by comparing a project in git to a parallel universe. Imagine your life, as it is now, as a master branch. It is a nice, solid line, travelling from your birth to present day. Now imagine we could make an infinite number of branches from your life as it is now, to how it could be in 10 years. Maybe in one branch you become a chemistry teacher who discovers he has cancer and turns to a life of crime and drug dealing to help his family before he dies.
+        </p>
+        <img src="Breaking-Bad.png" alt="Breaking Bad">
+        <p>
+          In another, you become the first person to step on to Mars, but then are tragically left on the planet by your devoted crew after a freak storm throws a satellite piece through your spacesuit and they assume you are left for dead.
+        </p>
+        <img src="The-Martian.png" alt="The Martian">
+        <p>
+          In another life, you become a git master and understand everything there is to know about version control.
+        </p>
+        <p>
+          You can see how each of your different life scenarios has played out. Now, imagine you can pick just one of these scenarios and integrate that to your master branch, to your actual life. That is a lot like git! You can play out these different scenarios, before you commit them to your master branch, your final product.
+        </p>
+        <p>
+          Now, imagine you pick one of the scenarios, but a few weeks in to living your new life, you decide it's actually not for you. With git, you can now revert back to a previous point in your life. In git, when you commit a new branch (it's a lot like saving your work, and adding details of what has been saved since the last update), you are creating a sort of checkpoint. You can revert back to this checkpoint at any time. So, for example, you could go back those ten years + a few weeks to your life exactly as it is today, before you were stranded on Mars, and select a better path, like becoming a git master!
+        </p>
+        <p>
+          If none of these crazy analogies are working for you, try taking a look at this diagram from www.atlassian.com. Circles represent a commit, aka a save/checkpoint, for each branch. On top you see the master branch. The commits for this master branch also list the version number, as it's the main branch representing actual releases of an updated product. Below the master branch, you see various branchs (like alternate realities!) that are periodically merged with the master branch or each other as the team decides the work can be integrated.
+        </p>
+        <img src="https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/02/pageSections/06/contentFullWidth/0/content_files/file0/document/git-workflow-release-cycle-2feature.png" alt="Git flow">
+      </section>
+      <section>
+        <h3>Git vs. GitHub</h3>
+        <p>
+          By this point, hopefully you have a better idea of what version control is, how it is related to git, and why it is important. So, finally, we get to the difference between git and GitHub.
+        </p>
+        <p>
+          Rectangles are squares, but squares are not rectangles. That is a lot like git and GitHub! GitHub is a community of git practitioners. GitHub provides a place for everyone who utilizes git to share their information publically, with a select group of peers, or not at all. GitHub stores things online. GitHub is amazing!
+        </p>
+        <p>
+          Git is a widely used version control system. Git utilizes the command line, a powerful but somewhat more difficult way to view your code history. GitHub is a git hosting service, which utilizes a graphical user interface to display your code's version history. It's beautiful, easy to use, and all around great.
+        </p>
+        <p>
+          If you're still not sure what GitHub is, check out this <a href="http://techcrunch.com/2012/07/14/what-exactly-is-github-anyway/">TechCrunch article</a> going in to further detail about GitHub and all it's usefulness.
+        </p>
+      </section>
+      <section>
+        <h3>The Best Learning is Doing</h3>
+        <p>
+          Now go out and try it yourself! There are plenty of online tutorials introducing people to the basics of how to get started on git and GitHub.
+        </p>
+        <p>
+          I personally recommend <a href="http://rogerdudler.github.io/git-guide/">this website</a>. It is <strong>very</strong> basic and a great way to get through those tough first steps. Thanks for reading, and happy coding!
+        </p>
+      </section>
+    </article>
+  </main>
 
   <footer>
     <p id="copyright">Copyright 2015</p>

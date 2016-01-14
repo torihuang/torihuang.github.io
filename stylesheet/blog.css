@@ -1,71 +1,8 @@
-@font-face {
-  font-family: AvenirBook;
-  src: url("http://torihuang.github.io/blog/fonts/AvenirLTStd-Book.otf");
-}
-
-@font-face {
-  font-family: SignPainterHouseScript;
-  src: url("http://torihuang.github.io/blog/fonts/SignPainter-HouseScript.ttf");
-}
-
-body {
-  font-family: AvenirBook;
-}
-
 img {
   max-width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-nav {
-  margin: 10 10 10 10;
-  padding-bottom: 10px;
-  width: 100%;
-  background: white;
-  display: block;
-  border-bottom: 1px solid #F28C01;
-}
-
-#logo {
-  display:inline-block;
-  vertical-align: middle;
-  text-align: left;
-}
-
-nav ul {
-  list-style-type: none;
-  display:inline-block;
-  vertical-align: middle;
-  width: 50%;
-  text-align: right;
-  line-height: 400%;
-}
-
-nav ul li {
-  display: inline;
-  width: 25%;
-  float: right;
-}
-
-nav ul li a {
-  color: #F28C01;
-  text-decoration: none;
-}
-
-a {
-  color: #F28C01;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #3ACCA9;
-}
-
-#blog-content {
-  display: block;
-  text-align: center;
 }
 
 article {
@@ -91,43 +28,4 @@ article h2 {
 
 article h3 {
   text-align: center;
-}
-
-footer {
-  border-top: 1px solid #F28C01;
-  display: block;
-  width: 100%;
-}
-
-footer p {
-  display: inline-block;
-  padding-left: 30px;
-}
-
-#copyright {
-  width: 20%;
-}
-
-#connect {
-  width: 20%;
-  text-align: right;
-}
-
-footer ul {
-  list-style-type: none;
-  display:inline-block;
-  vertical-align: middle;
-  width: 40%;
-  text-align: right;
-}
-
-footer ul li {
-  display: inline;
-  width: 25%;
-  float: right;
-}
-
-footer ul li a {
-  color: #F28C01;
-  text-decoration: none;
 }

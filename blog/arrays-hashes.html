@@ -22,24 +22,28 @@
   <div id="line"></div>
 
   <article>
-    <h1>Arrays and Hashes</h1>
+    <h1>The Array vs. The Hash</h1>
     <h2>1/19/2016</h2>
 
     <p>
-      Arrays and Hashes are both collections used to store and retrieve data. Collections allow a programmer to save data in an organized manner, and are invaluable to preventing absolute chaos in a program! In this blog post I'll review arrays and hashes and the differences between the two.
+      Arrays and Hashes are both collections used to store and retrieve data. Collections allow a user to save data in an organized manner. Without collections, there would be absolute chaos.
     </p>
 
     <p>
-      There are plenty of articles explaning the syntax of how to edit arrays and hashes. In this blog, I will review some syntax but will mainly focus on the different uses for arrays and hashes. For more information on syntax, please check the resources links at the bottom of the page!
+      This blog post focuses on the different uses for arrays and hashes. While syntax is very important, there are plenty of easy ways to learn how to create, edit, and sort through these collections. This post should be used as an overview of the array and hash. For more information on syntax, please check the resources links at the bottom of the page!
     </p>
 
     <section>
-      <h3>Arrays</h3>
+      <h3>The Array</h3>
       <p>
-        First, arrays! Arrays are an amazing way to organize data in numerical order. In an array, values are stored in relation to a numerical value. Arrays start at zero, and move on towards infinity.
+        First, arrays! Arrays are an amazing way to organize data in numerical order. Starting at zero and moving on towards infinity, arrays values are stored in relation to a numerical value. Imagine a line of bozo buckets, the first bucket as 0, the second as 1, the third as 2, and so on. In each bucket is a different colored bean bag. In this example, we have an array of multi-colored bean bags.
+      </p>
+      <img src="imgs/bozo-buckets.png" alt="Bozo Buckets">
+      <p>
+        Wow, that clown is creepy.
       </p>
       <p>
-        For example, say you are trying to keep track of a list of friends. Maybe you have up to 20 friends you want to keep track of, so you always have a full list of people to invite to parties, and you want to create a program that will print out all your friend's names. You could, theoretically, just create a list of names in a string that print out.
+        Let's look at a more real life (less creepy) example of how you could utilize an array. Say you are trying to keep track of a list of 20 or so friends. You want a way to print out these twenty friend's names every week in order to remember who to invite to your weekly book club. You could, theoretically, just create a list of names in a string that print out.
       </p>
 
       <h4>Code</h4>
@@ -65,13 +69,13 @@
       </pre></code>
 
       <p>
-        This is a pretty terrible solution to this problem. There are a ton of variables, and way too many lines of code. Plus, there is no easy way to sort through and edit your friend group. What if your friend Lucy Smith moves away, and you need to take her off the party list indefinitely? What if you met a cool new person in yoga class who promises they'll bring their cute dog to the next party, so you need to add them to the invite list? That's where arrays come in.
+        This is a pretty terrible solution to this problem. There are a ton of variables, and way too many lines of code. Plus, there is no easy way to sort through and edit your friend group. What if your friend Lucy Smith moves away, and you need to take her off the book club indefinitely? What if you met a new person in yoga class who promises they'll bring their cute dog to the next event, so you need to add them to the invite list? That's where arrays come in.
       </p>
 
       <img src="imgs/upward-dog.png" alt="Upward Dog">
 
       <p>
-        With an array, you'll be able to sort, edit, and add to your list of friends. You can add people, delete people, and arrange names alphabetically. It is easier to organize your data. The code is more efficient. It is basically better in every imaginable way.
+        With an array, you'll be able to sort, edit, and add to your list of friends. You can add people, delete people, and arrange names alphabetically. It is a an easier way to organize your data. The code is more efficient. It is basically better in every imaginable way.
       </p>
 
       <pre><code>
@@ -89,17 +93,17 @@
       </pre></code>
 
       <p>
-        That's infinitely better! Only two lines, but the same output. Now you can delete Lucy and make sure the yoga hunk is invited to your next soiree, with less effort. You can even sort through your new array of friends and sort them. Again, arrays are ordered by number. Say you wanted to capture the first person from the list. You would access their name using <code>invite_list[0]</code>. At the moment, <code>invite_list[0]</code> would return Lucy Smith. If you wanted to access the second person, you would use <code>invite_list[1]</code> and find John Carol.
+        That's infinitely better! Only two lines, but the same output. Now you can delete Lucy and make sure the yoga friend is invited to your next soiree. You can even search through your new array of friends for specific names (Check resources below for syntax on how to do this). Again, arrays are ordered by number. Say you wanted to capture the first person from the list. You would access their name using <code>invite_list[0]</code>. At the moment, <code>invite_list[0]</code> would return Lucy Smith. If you wanted to access the second person, you would use <code>invite_list[1]</code> and find John Carol.
       </p>
       <p>
-        However handy they may be, arrays do have their limitations. Take the invite list example. While it is very useful to have a list of friends to invite to a party, it would be even more useful to print out their name along with their email address. Is there a way to do this with arrays? Maybe, if you created an array of arrays or if you included the email with the string of their name. Would it work? Yes. Would it be messy? Double yes. There has to be an easier way to connect names with additional information. This is where hashes come in.
+        However handy they may be, arrays do have their limitations. Take the invite list example. While it is very useful to have a list of friends to invite to your book club, it would be even more useful to print out their name along with their email address. Is there a way to do this with arrays? Maybe, if you created an array of arrays or if you included the email with the string of their name. Would it work? Yes. Would it be messy? Double yes. There has to be an easier way to connect names with additional information. This is where hashes come in.
       </p>
     </section>
 
     <section>
-      <h3>Hashes</h3>
+      <h3>The Hash</h3>
       <p>
-        Now we understand a bit about arrays, collections of objects ordered by number, let's take a look at hashes. Like arrays, hashes store information in an organized manner. Unlike arrays, hashes do not necessarily connect these objects to a numerical value. Hashes are a collection of objects, where each object is connected to a key. The key can be a number or a string. The value can be an object, or even a method.
+        Now we understand a bit about arrays, collections of ordered objects, let's take a look at the hash. Like arrays, hashes store information in an organized manner. Unlike arrays, hashes do not necessarily connect these objects to a numerical value. Hashes are a collection of objects, where each object is connected to a key. The key can be a number or a string. The value can be an object, or even a method.
       </p>
 
       <h4>Hash Example</h4>
@@ -116,6 +120,8 @@
         In the example above, the movies (Harry Potter, Shrek, Finding Nemo) are the keys and the supporting characters (Hermione, Donkey, Dory) are the values. You can search for supporting characters by movie. You can search for movie by supporting characters. Hashes are amazing!
       </p>
 
+      <img src="imgs/donkey.png" alt="In the morning, I'm making waffles!">
+
       <p>
         Let's take a look at our invite list example for a better understanding. First, we have to create our hash.
       </p>
@@ -128,7 +134,7 @@
           "Brendan Sweeney" => "bsweeney@yahoo.com",
           "Joy Lin" => "me@joylin.com",
           "Wine Bottles"=>10, "Start,
-          Time" => "9:00PM"
+          Time" => "6:00PM"
         }
 
         puts supporting_characters
@@ -138,21 +144,25 @@
 
       <h4>Output</h4>
       <pre><code>
-        {"Lucy Smith"=>"lsmith@gmail.com", "John Carol"=>"carolboy@gmail.com", "Brendan Sweeney"=>"bsweeney@yahoo.com", "Joy Lin"=>"me@joylin.com", "Wine Bottles"=>10, "Start Time" => "9:00PM"}
+        {"Lucy Smith"=>"lsmith@gmail.com", "John Carol"=>"carolboy@gmail.com", "Brendan Sweeney"=>"bsweeney@yahoo.com", "Joy Lin"=>"me@joylin.com", "Wine Bottles"=>10, "Start Time" => "6:00PM"}
 
         Lucy Smith
         John Carol
         Brendan Sweeney
         Joy Lin
+        Wine Bottles
+        Start Time
 
         lsmith@gmail.com
         carolboy@gmail.com
         bsweeney@yahoo.com
         me@joylin.com
+        10
+        6:00PM
       </pre></code>
 
       <p>
-        Now you have names and email! So handy. You can still sort, edit, and add to your hash. Not only do you have this information, but we have also snuck some additional variables in here. From this hash, you can tell that at the last party you drank 10 bottles of wine and the start time was 9:00PM. You could even write a small program to access this information at any time.
+        Now you have names and email! So handy. You can still sort, edit, and add to your hash. If you took a close look at that example, you'll see we also snuck some additional variables. From this hash, you can tell that at the last party you drank 10 bottles of wine and the start time was 6:00PM. (That's right, 10 is an integer! As we mentioned before, hashes can store anything!) These new additions are very useful. You could even write a small program to access this information at any time.
       </p>
 
       <pre><code>
@@ -161,7 +171,7 @@
       </pre></code>
 
       <p>
-        The code above will return 10 and 9:00PM, the total number of bottles purchased and start time of your last party so you know exactly how much wine to purchase and what invite time to send out! Can you imagine trying to do this with an array? There would be no way to link the information (10 bottles and 9:00PM) with any searchable value. This is why hashes are great.
+        The code above will return 10 and 6:00PM, the total number of bottles purchased and start time of your last book club so you know exactly how much wine to purchase and what invite time to send out! Can you imagine trying to do this with an array? There would be no way to link the information (10 bottles and 6:00PM) with any searchable value. This is why hashes are great.
       </p>
 
     </section>
@@ -169,7 +179,7 @@
     <section>
       <h3>The Real Difference between Arrays and Hashes</h3>
       <p>
-        Both arrays and hashes are collections of objects. Arrays are organized numerically, while hashes are keys and values linked together. The <strong>real</strong> difference between arrays and hashes is that arrays are more like a linear storage system. The create organized lists; numbers to link to objects. Hashes are more like maps. The keys themselves hold value, and link to another object that stores even more value.
+        Both arrays and hashes are collections of objects. Arrays are organized numerically, while hashes are keys and values linked together. The <strong>real</strong> difference between arrays and hashes is that arrays are more like linear storage system while hashes are more like maps. Hashes are made of keys which point to values. It's a key to value map.
       </p>
     </section>
 

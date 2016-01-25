@@ -31,7 +31,7 @@ a:hover {
   color: #3ACCA9;
 }
 
-nav {
+header {
   margin: 10 10 10 10;
   padding-bottom: 10px;
   width: 100%;
@@ -40,10 +40,55 @@ nav {
   border-bottom: 1px solid #F28C01;
 }
 
+nav {
+  display: inline-block;
+  width: 70%;
+  float: right;
+  vertical-align: middle;
+}
+
 #logo {
   display:inline-block;
   vertical-align: middle;
-  text-align: left;
+  text-align: center;
+  color: black;
+  width: 300px;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#name {
+  font-family: SignPainterHouseScript;
+  font-size: 60px;
+  display: block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-bottom: 10px;
+}
+
+#developer {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#and {
+  font-family: SignPainterHouseScript;
+  text-align: center;
+  font-size: 40px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#engineer {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 nav ul {
@@ -121,8 +166,8 @@ footer {
 
 #copyright {
   display: inline-block;
-  padding-left: 30px;
-  width: 10%;
+  vertical-align: middle;
+  padding-left: 60px;
   float: left;
   text-align: left;
 }
@@ -131,19 +176,26 @@ footer ul {
   list-style-type: none;
   display:inline-block;
   vertical-align: middle;
-  width: 62.5%;
   padding-right: 100px;
   float: right;
   text-align: right;
 }
 
 footer ul li {
-  display: inline;
-  width: 20%;
+  display: inline-block;
   float: right;
 }
 
 footer ul li a {
   color: #F28C01;
   text-decoration: none;
+}
+
+.contact-icon {
+  width: 50px;
+  border-radius: 25px;
+}
+
+.contact-icon:hover {
+  background-color: #3ACCA9;
 }

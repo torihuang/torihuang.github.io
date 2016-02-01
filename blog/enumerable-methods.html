@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='../imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet/blog.css">
+  <title>Tori Huang Blog</title>
+</head>
+<body>
+
+  <header>
+    <a href="http://torihuang.github.io">
+      <div id="logo">
+        <p id="name">Tori Huang</p>
+        <p id="developer">developer</p>
+        <p id="and">&</p>
+        <p id="engineer">engineer</p>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../praise/index.html">Praise</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="line"></div>
+
+  <article>
+    <h1>Ruby Enumerables</h1>
+    <h2>1/30/16</h2>
+
+    <img src="imgs/map-select-each.png" alt="Map Select Each">
+
+    <p>
+      Collections are a powerful way to organize your data in Ruby. Like lists, collections contain multiple objects that can be accessed, sorted, printed, etc. For example, arrays and hashes are examples of two of the most common Ruby collections. However, there is one common problem when utilizing collections - iterating through every value in the collection. Collection values need to be changed, sorted, removed, inserted, the list goes on and on. This is where the enumerable module comes in to play. Enumerables allow you to iterate through every value in a collection to complete a variety of tasks.
+    </p>
+
+    <p>
+      Think of an enumerable like an iterator. Having an enumerable module connected to your collection gives it access to a plethora of iteration options - given one condition. The collection must have an each method that allows the enumerable module to understand exactly <strong>how</strong> they are supposed to iterate through the collection. For example, as previously stated, arrays and hashes are both collections. Arrays are simple. When you iterate an array, you simply go from the first value, to the second, to the third, until you run out of values. However, not all collections are as straight forward as arrays. Take the hash. When you iterate through a hash you have two variables, the key and the value. How does an iterator (aka the enumerable) know how to iterate through every value in a hash? The answer - the iteration method is defined in #each. #each tells the the enumerable module to expect two values, which allows the hash access to all kinds of cool methods.
+    </p>
+
+    <p>
+      In this post, I will review what I view to be the three most important enumerable methods - #map, #select and, of course, #each. We will look at what these methods do and how they interact with both arrays and hashes. First the <strong>most</strong> important method, #each.
+    </p>
+
+    <section>
+      <h3>#each</h3>
+      <p>
+        As previous stated, each is the cornerstone of any enumerable module. #each tells the enumerable <strong>how</strong> to iterate through the collection. #each is a method that can be called by an collection utilizing enumerable.
+      </p>
+
+      <p>
+        #each iterates through every value in the collection and completes some command. The command does not necessarily need to be related to the value of the collection. #each is non-destructive, and the return value of #each is always the initial collection. Because of this, you will almost never see a #each method return to a variable. Let’s take a look at #each in arrays and hashes.
+      </p>
+
+      <h4>Array</h4>
+      <pre><code>
+        array = [1,2,3,4]
+        array.each { |num| puts num }
+        ——
+        1
+        2
+        3
+        4
+      </code></pre>
+
+      <h4>Hash</h4>
+      <pre><code>
+        hash = {“First Name” => “Tori”, “Last Name” => “Huang, “Age” => 25}
+        hash.each { |key, value| puts “#{key}: #{value}” }
+        ——
+        First Name: Tori
+        Last Name: Huang
+        Age: 25
+      </code></pre>
+
+      <p>
+        In the examples above, the enumerable method #each iterates through every value in the array and hash, and completes some command. In this case, that command is to print the value of the collection to the console.
+      </p>
+    </section>
+    <section>
+      <h3>#map</h3>
+      <p>
+        #map is a really useful method! Think about a time when you needed to change <strong>every</strong> value in a collection. This would be a good time to use #map. #map is different from #each, as it iterates through every value in a collection and changes the collection in some way and then returns the new value.
+      </p>
+
+      <h4>A few key things you need to know about #map</h4>
+      <ul>
+        <li>#map returns an array, <strong>always</strong></li>
+        <li>#map changes each value in the array to the <strong>first</strong> command passed to the method</li>
+        <li>#map is a non-destructive method, although Array contains a destructive #map! method</li>
+      </ul>
+
+      <p>
+        Now let’s look at an example with Array!
+      </p>
+
+      <h4>Array</h4>
+      <pre><code>
+        array = [1,2,3,4]
+        print array.map { |x| x*2 }
+        puts ""
+        print array
+        ——
+        [2,4,6,8]
+        [1,2,3,4]
+      </code></pre>
+
+      <p>
+        This follows all the rules listed above. #map returns an array, it changed all the values to <code>x * 2</code>, and the array was non-destructive. Now, let's look at hash. Remember, #map always returns an array! How do you think #map will work with a hash?
+      </p>
+
+      <h4>Hash - Values Changed</h4>
+      <pre><code>
+        hash = {“First Name” => “Tori”, “Last Name” => “Huang, “Age” => 25}
+        witness_protection = hash.map{|key,value| value="Unknown"}
+        print witness_protection
+        ——
+        ["Unknown", "Unknown", "Unknown"]
+      </code></pre>
+
+      <img src="imgs/witness-protection.png" alt="Map Select Each">
+
+      <p>
+        Again, this example follows all the rules of #map. #map always returns an array. This can get confusing when #map is being called on a hash. There are two values, how is the array created? Well, we know that #map completes some command for values passed to the argument block. For a hash, both the key and value are passed. In this case, value is what we are changing. Therefore, it is an array of all values in the hash that will be returned. In this example, we change each value to "Unknown", so we simply get an array of "Unknown". However, if we were to change the value of the keys instead, we would get an array of the changed key values. Take a look at the example below, for further understanding.
+      </p>
+
+      <h4>Hash - Keys Changed</h4>
+      <pre><code>
+        hash = {“First Name” => “Tori”, “Last Name” => “Huang, “Age” => 25}
+        wahoo = hash.map{|key,value| key + "!"}
+        print wahoo
+        ——
+        ["First Name!", "Last Name!", "Age!"]
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>#select</h3>
+
+      <p>
+        This is arguably one of the most common Ruby Enumerable methods. #select, aka #find_all, iterates through each value in a collection and selects only the values that meet a given condition. It then returns a collection of the same type as the original collection containg values that met the criteria. That sounded a bit complicated, let's just look at an example.
+      </p>
+
+      <h4>Array</h4>
+      <pre><code>
+        array = [1,2,3,4]
+        print array.select {|x| x>=3 }
+        ——
+        [3, 4]
+      </code></pre>
+
+      <h4>Hash</h4>
+      <pre><code>
+        hash = {“First Name” => “Tori”, “Last Name” => “Huang, “Age” => 25}
+        new_hash = hash.select { |key, value| value == “Tori” }
+        new_hash.each { |key, value| puts “#{key}: #{value}” }
+        ——
+        First Name: Tori
+      </code></pre>
+
+      <p>
+        In the first example, #select was called on an array, so it returned an array. In the second, a hash, and #select returned a hash. The opposite of #select would be #reject, which completes the same process while returning the original collection minus the values that meet the given condition.
+      </p>
+    </section>
+
+    <section>
+      <h3>More Resources</h3>
+      <p>
+        Thanks for reading! For more information and resources, check out the links below. They are incredibly helpful, and are where I found all the data for this post.
+      </p>
+      <ul>
+        <li><a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">Tons of Methods</a></li>
+        <li><a href="http://ruby-doc.org/core-2.1.4/Hash.html">Ruby Docs - Hash</a></li>
+        <li><a href="http://ruby-doc.org/core-2.2.3/Enumerable.html">Ruby Docs - Enumerable</a></li>
+      </ul>
+    </section>
+  </article>
+
+  <footer>
+    <p id="copyright">Copyright © 2016</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/victoriahuangbrauer"><img src="../imgs/linkedin-icon.png" class="contact-icon" alt="LinkedIn"></a></li>
+      <li><a href="https://github.com/torihuang"><img src="../imgs/github-icon.png" class="contact-icon" alt="GitHub"></a></li>
+      <li><a href="tel:708-212-3489"><img src="../imgs/call-icon.png" class="contact-icon" alt="Call"></a></li>
+      <li><a href="mailto:victoriahuang20@gmail.com" target="_top"><img src="../imgs/email-icon.png" class="contact-icon" alt="Email"></a></li>
+    </ul>
+  </footer>
+</body>
+</html>

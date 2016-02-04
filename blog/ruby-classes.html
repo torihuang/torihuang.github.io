@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='../imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet/blog.css">
+  <title>Tori Huang Blog</title>
+</head>
+<body>
+
+  <header>
+    <a href="http://torihuang.github.io">
+      <div id="logo">
+        <p id="name">Tori Huang</p>
+        <p id="developer">developer</p>
+        <p id="and">&</p>
+        <p id="engineer">engineer</p>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../praise/index.html">Praise</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="line"></div>
+
+  <article>
+    <h1>Ruby Classes</h1>
+    <h2>2/2/2016</h2>
+    <p>
+      Classes. They make everything organized, categorized, simplified. Classes allow you to create repeating objects that have the same instance variables and call the same methods. They create order to what would otherwise be absolute chaos!
+    </p>
+
+    <p>
+      What is a class? A class is an instance of an object. It’s like an object’s blue print. Think of some object classes you may already know - String, Integer, Float. What happens when you identify an object as a String? It suddenly has access to this huge world of methods. You can call a string’s length. You can capitalize it, lowercase it, and reverse it. You can even treat a string like an array! The String methods #length, #capitalize, #reverse, have all been declared within the String’s class. This gives any item declared as a String the power to use these methods.
+    </p>
+
+    <p>
+      So here is where things get really cool - <strong>you can create your own classes with their own variables and methods</strong>. Theoretically, you could even create your own String class. Would you ever want to do that? Probably not, Ruby gives you the String class built in to their code. Ruby actually gives us a ton of pre existing classes. However, there will be many times when you need to create your own class.
+    </p>
+
+    <p>
+      In order to better examine how to create a class, and why classes are useful, let’s look at an example. Say you, your husband, and your little dog are going on a trip. You each have your own bags and a long list of items you need to bring. You could, of course, just create a list of the items each person wants to bring. You could even create a Ruby program that simply three arrays containing these lists of items. Maybe it would look something like this.
+    </p>
+
+    <img src="imgs/alpaca.png" alt="Alapaca Your Things for You">
+
+    <pre><code>
+      Tori = [“Jeans”,”Shirts”,”Running Shoes”,”Boots”,”Yoga Pants”,”,”Dresses”,”Hair Brush”,”Toothbrush”,”Deoderant”,”Shampoo”,”Conditioner”,”Hair Ties”,”Make Up”,”Jewelry”,”Chocolate”,”Present for Mom”,”Book for Sister”]
+
+      Matt = [“Jeans”,”Shirts”,”Running Shoes”,”Dress Shoes”,”Watch”,”Under Shirts”,”Shaving Cream”,”Body Wash”,”Deoderant”,”Toothbrush”,”Toothpaste”,”Chips”,”Granola Bar”,”Gatorade”,”Pajamas”]
+
+      Nors = [“Dog Food”,”Water Bowl”,”Food Bowl”,”Stuffed Squirrel”,”Extension Leash”,”Short Leash”,”Harness”,”Plaid Jacket”,”Blue Sweater”,”Squeaky Duck”,”Treats”]
+    </code></pre>
+
+    <p>
+      This is a terrible way of completing this task. The name of the array indicates the owner of the list, but the name of a variable is a difficult thing to reference. What if you want to find or remove an item? What if you want to add an item? What if you want to print off a list of items by category? None of these things can be done, as there are no methods attached to these arrays. You could, of course, create individual methods and attach them to each collection, but that seems repetitive and therefore silly. There has to be an easier way. This is where classes come in.
+    </p>
+
+    <p>
+      The best way to learn is by jumping right in to an example! Check out the code below. This is a class called <code>Bag</code>, which allows a user to create a "bag" that has an owner, description, and a list of organized items. This Bag class allows the user to <code>add</code> items, <code>remove</code> items, <code>check_bag</code> to make sure everything is in there, and even <code>unpack</code> when you arrive at your final destination! At any time, you can view a list of everything you are bringing in your bag with <code>list_items</code>, and check the <code>owner</code> or <code>description</code> of the bag.
+    </p>
+
+    <p>
+      Please note that the code below was colored and prettified using a code HTML/CSS generator called hilite.me!
+    </p>
+
+    <pre><code>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Bag</span>
+
+  <span style="color: #003388; font-weight: bold">attr_reader</span> <span style="color: #AA6600">:owner</span>, <span style="color: #AA6600">:description</span>
+  <span style="color: #003388; font-weight: bold">attr_accessor</span> <span style="color: #AA6600">:items</span>
+
+  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(owner, description, items<span style="color: #333333">=</span>{})
+    <span style="color: #3333BB">@owner</span> <span style="color: #333333">=</span> owner
+    <span style="color: #3333BB">@description</span> <span style="color: #333333">=</span> description
+    <span style="color: #3333BB">@items</span> <span style="color: #333333">=</span> items
+  <span style="color: #008800; font-weight: bold">end</span>
+
+  <span style="color: #888888"># Add items by type and quantity to the item list</span>
+  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">add</span>(type, thing, quantity<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>)
+    <span style="color: #888888"># Add a new type if it does not already exist.</span>
+    <span style="color: #3333BB">@items</span><span style="color: #333333">[</span>type<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #333333">[]</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">!</span><span style="color: #3333BB">@items</span><span style="color: #333333">.</span>has_key?(type)
+
+    list_by_type <span style="color: #333333">=</span> <span style="color: #3333BB">@items</span><span style="color: #333333">[</span>type<span style="color: #333333">]</span>
+    <span style="color: #008800; font-weight: bold">if</span> list_by_type<span style="color: #333333">.</span>is_a? <span style="color: #007020">Array</span> <span style="color: #008800; font-weight: bold">then</span>
+      list_by_type<span style="color: #333333">.</span>push(thing)
+    <span style="color: #008800; font-weight: bold">elsif</span> list_by_type<span style="color: #333333">.</span>has_key?(thing) <span style="color: #008800; font-weight: bold">then</span>
+      list_by_type<span style="color: #333333">[</span>thing<span style="color: #333333">]</span> <span style="color: #333333">+=</span> quantity
+    <span style="color: #008800; font-weight: bold">else</span>
+      list_by_type<span style="color: #333333">[</span>thing<span style="color: #333333">]</span> <span style="color: #333333">=</span> quantity
+    <span style="color: #008800; font-weight: bold">end</span>
+  <span style="color: #008800; font-weight: bold">end</span>
+
+  <span style="color: #888888"># Remove items by type and quantity</span>
+  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">remove</span>(type, thing, quantity<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>)
+
+    missing_type_error <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;We could not find </span><span style="background-color: #eeeeee">#{</span>type<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> as a type! Please try again.&quot;</span>
+    missing_item_error <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">#{</span>thing<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> does not exist in your list under </span><span style="background-color: #eeeeee">#{</span>type<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">.&quot;</span>
+    wrong_quantity_error <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;You tried to delete more </span><span style="background-color: #eeeeee">#{</span>thing<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> than you have. </span><span style="background-color: #eeeeee">#{</span>thing<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> has been removed from the list.&quot;</span>
+
+    <span style="color: #888888"># Checks if type exists in list</span>
+    <span style="color: #007020">puts</span> missing_type_error <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">!</span><span style="color: #3333BB">@items</span><span style="color: #333333">.</span>has_key?(type)
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">false</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">!</span><span style="color: #3333BB">@items</span><span style="color: #333333">.</span>has_key?(type)
+
+
+    list <span style="color: #333333">=</span> <span style="color: #3333BB">@items</span><span style="color: #333333">[</span>type<span style="color: #333333">]</span>
+
+    <span style="color: #888888"># Removes the item by quantity depending on Array or Hash type</span>
+    <span style="color: #008800; font-weight: bold">if</span> list<span style="color: #333333">.</span>is_a? <span style="color: #007020">Array</span> <span style="color: #008800; font-weight: bold">then</span>
+      <span style="color: #008800; font-weight: bold">if</span> list<span style="color: #333333">.</span>include?(thing) <span style="color: #008800; font-weight: bold">then</span>
+        list<span style="color: #333333">.</span>delete(thing)
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">true</span>
+      <span style="color: #008800; font-weight: bold">else</span>
+        <span style="color: #007020">puts</span> missing_item_error
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">false</span>
+      <span style="color: #008800; font-weight: bold">end</span>
+    <span style="color: #008800; font-weight: bold">elsif</span> list<span style="color: #333333">.</span>has_key?(thing) <span style="color: #008800; font-weight: bold">then</span>
+      <span style="color: #008800; font-weight: bold">if</span> list<span style="color: #333333">[</span>thing<span style="color: #333333">]</span> <span style="color: #333333">&lt;</span> quantity <span style="color: #008800; font-weight: bold">then</span>
+        list<span style="color: #333333">.</span>delete(thing)
+        <span style="color: #007020">puts</span> wrong_quantity_error
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">false</span>
+      <span style="color: #008800; font-weight: bold">else</span>
+        list<span style="color: #333333">[</span>thing<span style="color: #333333">]</span> <span style="color: #333333">-=</span> quantity
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">true</span>
+      <span style="color: #008800; font-weight: bold">end</span>
+    <span style="color: #008800; font-weight: bold">else</span>
+      <span style="color: #007020">puts</span> missing_item_error
+      <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">false</span>
+    <span style="color: #008800; font-weight: bold">end</span>
+  <span style="color: #008800; font-weight: bold">end</span>
+
+  <span style="color: #888888"># List all items in your bag</span>
+  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">list_items</span>
+    <span style="color: #3333BB">@items</span><span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>type,list<span style="color: #333333">|</span>
+      <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">#{</span>type<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
+      <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;--------------------&quot;</span>
+      list<span style="color: #333333">.</span>each {<span style="color: #333333">|</span>item, key<span style="color: #333333">|</span> <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">#{</span>item<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> </span><span style="background-color: #eeeeee">#{</span>key<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>}
+      <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;&quot;</span>
+    <span style="color: #008800; font-weight: bold">end</span>
+  <span style="color: #008800; font-weight: bold">end</span>
+
+  <span style="color: #888888"># Check for lost items in your bag</span>
+  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">check_bag</span>(lost_item)
+    <span style="color: #3333BB">@items</span><span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>type,list<span style="color: #333333">|</span>
+      contains_lost_item <span style="color: #333333">=</span> list<span style="color: #333333">.</span>any? {<span style="color: #333333">|</span>item,empty<span style="color: #333333">|</span> item <span style="color: #333333">==</span> lost_item}
+      <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">true</span> <span style="color: #008800; font-weight: bold">if</span> contains_lost_item
+    <span style="color: #008800; font-weight: bold">end</span>
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #003388; font-weight: bold">false</span>
+  <span style="color: #008800; font-weight: bold">end</span>
+
+  <span style="color: #888888"># Unpack the bag and print all contents</span>
+  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">unpack</span>
+    <span style="color: #3333BB">@items</span><span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>type,list<span style="color: #333333">|</span>
+      <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">#{</span>type<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
+      <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;--------------------&quot;</span>
+      list<span style="color: #333333">.</span>each {<span style="color: #333333">|</span>item<span style="color: #333333">|</span> <span style="color: #007020">puts</span> item}
+      <span style="color: #3333BB">@items</span><span style="color: #333333">.</span>delete(type)
+      <span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;&quot;</span>
+    <span style="color: #008800; font-weight: bold">end</span>
+  <span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+</pre></div>
+    </code></pre>
+
+    <p>
+      So, let's break this down! First, we can see we have a class called <code>Bag</code>. The very first thing any <code>Bag</code> class is going to do, is to call it's <code>initialize</code> method. <code>initialize</code> is the first thing any class searches for when a new object of that class is created. <code>initialize</code> is frequently used to set instance variables. In this case, we take our instance variables <code>owner</code>, <code>description</code>, and <code>items</code>, and set them equal to the arguments declared when the new <code>Bag</code> class was created. For more on instance variables or declaring initialize, check out the resources section below.
+    </p>
+
+    <p>
+      Before <code>initialize</code>, you can see <code>attr_reader</code> and <code>attr_accessor</code>, both linked to our instance variables. <code>attr_reader</code> and <code>attr_accessor</code> give access to these instance variables outside the class. Their sole purpose is to allow a user to either read or write to these variables. For more information on accessors, please check out the resources below.
+    </p>
+
+    <p>
+      The cool part of this code are the added functions. You can create a new bag, initialize it with all kinds of variables, and then change or read the instance variables. Let's get a bag packed for my little dog Nors.
+    </p>
+
+    <pre><code>
+      nors_bag = Bag.new("Nors","Doggy Bag",{
+        "Clothes"=>["Plaid Jacket","Blue Sweater"],
+        "Snacks"=>{"Dog Food"=>5,"Bowl"=>1,"Food Bowl"=>1,"Treats"=>10},
+        "Toys"=>["Stuffed Squirrel","Squeaky Duck"],
+        "Misc"=>["Extension Leash","Short Leash","Harness","Brush"]
+      })
+
+      nors_bag.list_items
+
+      OUTPUT:
+
+      Clothes
+      --------------------
+      Plaid Jacket
+      Blue Sweater
+
+      Snacks
+      --------------------
+      Dog Food 5
+      Bowl 1
+      Food Bowl 1
+      Treats 10
+
+      Toys
+      --------------------
+      Stuffed Squirrel
+      Squeaky Duck
+
+      Misc
+      --------------------
+      Extension Leash
+      Short Leash
+      Harness
+      Brush
+    </code></pre>
+
+    <p>
+      For such a little dog, Nors is not a light packer.
+    </p>
+
+    <img src="imgs/nori-bag.png" alt="Nors Bag">
+
+    <p>
+      Now we have her bag packed, but I can't remember if I packed her Squeaky Duck.
+    </p>
+
+    <pre><code>
+      puts nors_bag.check_bag("Squeaky Duck")
+
+      Output:
+      No worries, you already packed Squeaky Duck.
+    </code></pre>
+
+    <p>
+      Nori took one look at her bag and decided she needed more treats and less brushes. Let's say we decide to add and remove some things from the bag.
+    </p>
+
+    <pre><code>
+      nors_bag.add("Snacks","Bones",3)
+      nors_bag.remove("Misc","Brush")
+      nors_bag.list_items
+
+      Output:
+      Clothes
+      --------------------
+      Plaid Jacket
+      Blue Sweater
+
+      Snacks
+      --------------------
+      Dog Food 5
+      Bowl 1
+      Food Bowl 1
+      Treats 10
+      Bones 3
+
+      Toys
+      --------------------
+      Stuffed Squirrel
+      Squeaky Duck
+
+      Misc
+      --------------------
+      Extension Leash
+      Short Leash
+      Harness
+    </code></pre>
+
+    <p>
+      It looks like Nors is all packed, and now we can do the same for myself and my husband! We can create our own bag class, pack it full of items, and then change the items around as we remember things we forgot to pack!
+    </p>
+
+    <p>
+      I hope this was a helpful overview of classes and how they work. If you are still unsure about this subject, take a look at some of the resources I have listed below. They really helped me in my understanding of the material! Please feel free to check out my <code>bag</code> class code on my <a href="https://github.com/torihuang/phase-0/blob/master/week-6/bag.rb">GitHub site</a>. Fork the project, copy it, or just look it over. I <strong>always</strong> love feedback, and would greatly appreciate any ideas you have for how to improve my code! I am sure there are many ways to make it better! If you see anything that could be improved, please send me an email at the contact information listed at the bottom of my site.
+    </p>
+
+    <h4>Resources</h4>
+    <ul>
+      <li><a href="http://rubylearning.com/satishtalim/writing_our_own_class_in_ruby.html">How to Write Your Own Class in Ruby - rubylearning.com</a></li>
+      <li><a href="http://www.rubyist.net/~slagell/ruby/accessors.html">What is an Accessor - rubyist.net</a></li>
+      <li><a href="http://hilite.me/">How I prettyfied my Ruby Code! - hilite.me</a></li>
+    </ul>
+  </article>
+
+  <footer>
+    <p id="copyright">Copyright © 2016</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/victoriahuangbrauer"><img src="../imgs/linkedin-icon.png" class="contact-icon" alt="LinkedIn"></a></li>
+      <li><a href="https://github.com/torihuang"><img src="../imgs/github-icon.png" class="contact-icon" alt="GitHub"></a></li>
+      <li><a href="tel:708-212-3489"><img src="../imgs/call-icon.png" class="contact-icon" alt="Call"></a></li>
+      <li><a href="mailto:victoriahuang20@gmail.com" target="_top"><img src="../imgs/email-icon.png" class="contact-icon" alt="Email"></a></li>
+    </ul>
+  </footer>
+</body>
+</html>
+

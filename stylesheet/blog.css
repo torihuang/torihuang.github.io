@@ -1,5 +1,5 @@
 img {
-  max-width: 100%;
+  max-width: 70%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -28,4 +28,8 @@ article h2 {
 
 article h3 {
   text-align: center;
+}
+
+pre {
+    white-space: pre-wrap;
 }

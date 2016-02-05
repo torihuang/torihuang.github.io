@@ -104,7 +104,8 @@ nav ul {
 
 nav ul li {
   display: inline;
-  width: 25%;
+  margin: 0px 1em;
+  /*width: 20%;*/
   float: right;
 }
 

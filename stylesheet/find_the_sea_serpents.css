@@ -35,3 +35,32 @@ tr {
   width: 50px;
   height: 50px;
 }
+
+footer {
+  text-align: center;
+  border-top: 0px solid #F28C01;
+  display: block;
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+}
+
+footer ul {
+  list-style-type: none;
+  display:inline-block;
+  vertical-align: middle;
+  margin: 0px auto;
+  padding: 0px 0px 0px 0px;
+  float: none;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0px auto;
+  padding: 0px 0px 0px 0px;
+  float: none;
+}
+
+.contact-icon {
+  width: 80px;
+  border-radius: 40px;
+}

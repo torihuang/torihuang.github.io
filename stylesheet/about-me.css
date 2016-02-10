@@ -51,10 +51,15 @@ main {
 }
 
 .left:hover .description {
-  display: inline-block;
+    display: inline-block;
 }
 
 .right:hover .description {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   display: inline-block;
   left: -100%;
   right:100%;

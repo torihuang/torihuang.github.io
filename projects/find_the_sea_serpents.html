@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet/find_the_sea_serpents.css">
+  <title>Tori Huang</title>
+</head>
+<body onload="startGame()">
+
+<h1>Sea Serpent Hunt</h1>
+
+<p id="status">A family of adorable sea serpents got lost in Lake Michigan! Help find them, so we can get them back to the ocean. Click a square to start the hunt.</p>
+
+<table>
+  <tr class="row" id ="R1">
+    <td class="C1" id ="1 1" onclick="guess('1 1')"></td>
+    <td class="C2" id ="1 2" onclick="guess('1 2')"></td>
+    <td class="C3" id ="1 3" onclick="guess('1 3')"></td>
+    <td class="C1" id ="1 4" onclick="guess('1 4')"></td>
+    <td class="C2" id ="1 5" onclick="guess('1 5')"></td>
+    <td class="C3" id ="1 6" onclick="guess('1 6')"></td>
+    <td class="C1" id ="1 7" onclick="guess('1 7')"></td>
+    <td class="C2" id ="1 8" onclick="guess('1 8')"></td>
+    <td class="C3" id ="1 9" onclick="guess('1 9')"></td>
+    <td class="C3" id ="1 10" onclick="guess('1 10')"></td>
+  </tr>
+  <tr class="row" id ="R2">
+    <td class="C1" id ="2 1" onclick="guess('2 1')"></td>
+    <td class="C2" id ="2 2" onclick="guess('2 2')"></td>
+    <td class="C3" id ="2 3" onclick="guess('2 3')"></td>
+    <td class="C1" id ="2 4" onclick="guess('2 4')"></td>
+    <td class="C2" id ="2 5" onclick="guess('2 5')"></td>
+    <td class="C3" id ="2 6" onclick="guess('2 6')"></td>
+    <td class="C1" id ="2 7" onclick="guess('2 7')"></td>
+    <td class="C2" id ="2 8" onclick="guess('2 8')"></td>
+    <td class="C3" id ="2 9" onclick="guess('2 9')"></td>
+    <td class="C3" id ="2 10" onclick="guess('2 10')"></td>
+  </tr>
+  <tr class="row" id ="R3">
+    <td class="C1" id ="3 1" onclick="guess('3 1')"></td>
+    <td class="C2" id ="3 2" onclick="guess('3 2')"></td>
+    <td class="C3" id ="3 3" onclick="guess('3 3')"></td>
+    <td class="C1" id ="3 4" onclick="guess('3 4')"></td>
+    <td class="C2" id ="3 5" onclick="guess('3 5')"></td>
+    <td class="C3" id ="3 6" onclick="guess('3 6')"></td>
+    <td class="C1" id ="3 7" onclick="guess('3 7')"></td>
+    <td class="C2" id ="3 8" onclick="guess('3 8')"></td>
+    <td class="C3" id ="3 9" onclick="guess('3 9')"></td>
+    <td class="C3" id ="3 10" onclick="guess('3 10')"></td>
+  </tr>
+  <tr class="row" id ="R4">
+    <td class="C1" id ="4 1" onclick="guess('4 1')"></td>
+    <td class="C2" id ="4 2" onclick="guess('4 2')"></td>
+    <td class="C3" id ="4 3" onclick="guess('4 3')"></td>
+    <td class="C1" id ="4 4" onclick="guess('4 4')"></td>
+    <td class="C2" id ="4 5" onclick="guess('4 5')"></td>
+    <td class="C3" id ="4 6" onclick="guess('4 6')"></td>
+    <td class="C1" id ="4 7" onclick="guess('4 7')"></td>
+    <td class="C2" id ="4 8" onclick="guess('4 8')"></td>
+    <td class="C3" id ="4 9" onclick="guess('4 9')"></td>
+    <td class="C3" id ="4 10" onclick="guess('4 10')"></td>
+  </tr>
+  <tr class="row" id ="R5">
+    <td class="C1" id ="5 1" onclick="guess('5 1')"></td>
+    <td class="C2" id ="5 2" onclick="guess('5 2')"></td>
+    <td class="C3" id ="5 3" onclick="guess('5 3')"></td>
+    <td class="C1" id ="5 4" onclick="guess('5 4')"></td>
+    <td class="C2" id ="5 5" onclick="guess('5 5')"></td>
+    <td class="C3" id ="5 6" onclick="guess('5 6')"></td>
+    <td class="C1" id ="5 7" onclick="guess('5 7')"></td>
+    <td class="C2" id ="5 8" onclick="guess('5 8')"></td>
+    <td class="C3" id ="5 9" onclick="guess('5 9')"></td>
+    <td class="C3" id ="5 10" onclick="guess('5 10')"></td>
+  </tr>
+  <tr class="row" id ="R6">
+    <td class="C1" id ="6 1" onclick="guess('6 1')"></td>
+    <td class="C2" id ="6 2" onclick="guess('6 2')"></td>
+    <td class="C3" id ="6 3" onclick="guess('6 3')"></td>
+    <td class="C1" id ="6 4" onclick="guess('6 4')"></td>
+    <td class="C2" id ="6 5" onclick="guess('6 5')"></td>
+    <td class="C3" id ="6 6" onclick="guess('6 6')"></td>
+    <td class="C1" id ="6 7" onclick="guess('6 7')"></td>
+    <td class="C2" id ="6 8" onclick="guess('6 8')"></td>
+    <td class="C3" id ="6 9" onclick="guess('6 9')"></td>
+    <td class="C3" id ="6 10" onclick="guess('6 10')"></td>
+  </tr>
+  <tr class="row" id ="R7">
+    <td class="C1" id ="7 1" onclick="guess('7 1')"></td>
+    <td class="C2" id ="7 2" onclick="guess('7 2')"></td>
+    <td class="C3" id ="7 3" onclick="guess('7 3')"></td>
+    <td class="C1" id ="7 4" onclick="guess('7 4')"></td>
+    <td class="C2" id ="7 5" onclick="guess('7 5')"></td>
+    <td class="C3" id ="7 6" onclick="guess('7 6')"></td>
+    <td class="C1" id ="7 7" onclick="guess('7 7')"></td>
+    <td class="C2" id ="7 8" onclick="guess('7 8')"></td>
+    <td class="C3" id ="7 9" onclick="guess('7 9')"></td>
+    <td class="C3" id ="7 10" onclick="guess('7 10')"></td>
+  </tr>
+  <tr class="row" id ="R8">
+    <td class="C1" id ="8 1" onclick="guess('8 1')"></td>
+    <td class="C2" id ="8 2" onclick="guess('8 2')"></td>
+    <td class="C3" id ="8 3" onclick="guess('8 3')"></td>
+    <td class="C1" id ="8 4" onclick="guess('8 4')"></td>
+    <td class="C2" id ="8 5" onclick="guess('8 5')"></td>
+    <td class="C3" id ="8 6" onclick="guess('8 6')"></td>
+    <td class="C1" id ="8 7" onclick="guess('8 7')"></td>
+    <td class="C2" id ="8 8" onclick="guess('8 8')"></td>
+    <td class="C3" id ="8 9" onclick="guess('8 9')"></td>
+    <td class="C3" id ="8 10" onclick="guess('8 10')"></td>
+  </tr>
+  <tr class="row" id ="R9">
+    <td class="C1" id ="9 1" onclick="guess('9 1')"></td>
+    <td class="C2" id ="9 2" onclick="guess('9 2')"></td>
+    <td class="C3" id ="9 3" onclick="guess('9 3')"></td>
+    <td class="C1" id ="9 4" onclick="guess('9 4')"></td>
+    <td class="C2" id ="9 5" onclick="guess('9 5')"></td>
+    <td class="C3" id ="9 6" onclick="guess('9 6')"></td>
+    <td class="C1" id ="9 7" onclick="guess('9 7')"></td>
+    <td class="C2" id ="9 8" onclick="guess('9 8')"></td>
+    <td class="C3" id ="9 9" onclick="guess('9 9')"></td>
+    <td class="C3" id ="9 10" onclick="guess('9 10')"></td>
+  </tr>
+  <tr class="row" id ="R10">
+    <td class="C1" id ="10 1" onclick="guess('10 1')"></td>
+    <td class="C2" id ="10 2" onclick="guess('10 2')"></td>
+    <td class="C3" id ="10 3" onclick="guess('10 3')"></td>
+    <td class="C1" id ="10 4" onclick="guess('10 4')"></td>
+    <td class="C2" id ="10 5" onclick="guess('10 5')"></td>
+    <td class="C3" id ="10 6" onclick="guess('10 6')"></td>
+    <td class="C1" id ="10 7" onclick="guess('10 7')"></td>
+    <td class="C2" id ="10 8" onclick="guess('10 8')"></td>
+    <td class="C3" id ="10 9" onclick="guess('10 9')"></td>
+    <td class="C3" id ="10 10" onclick="guess('10 10')"></td>
+  </tr>
+</table>
+
+<script>
+var board = {};
+
+function Ship(ship_size, board_size) {
+    // declare variables
+    this.ship_size = ship_size;
+    this.board_size = board_size;
+    var ship_loc = {};
+    this.ship_loc = ship_loc;
+    var alignment = 0;
+    var x_start = 0;
+    var y_start = 0;
+
+    var create_ship_location = function() {
+      // If aligment is 1, horizontal, else, vertical
+      alignment = Math.floor((Math.random() * 2) + 1);
+      // var alignment = 1;
+
+      // Find starting x and y location
+      x_start = Math.floor((Math.random() * board_size));
+      y_start = Math.floor((Math.random() * board_size) + 1);
+
+    }
+
+    // Loops through the board to complete various functions
+    var loop_through_board = function(callback) {
+      var currentLoc = 0;
+      if (alignment === 1) currentLoc = x_start;
+      else currentLoc = y_start;
+
+      var currentSize = 0;
+
+      while (currentSize < ship_size) {
+        var test = true;
+        if (alignment === 1) {
+          if (currentLoc >= board_size) {
+            test = callback(y_start,currentLoc - currentSize - 1)
+            currentLoc = currentLoc - 1;
+          }
+          else {
+            test = callback(y_start,currentLoc);
+          }
+        }
+        else {
+          if (currentLoc >= board_size) {
+            test = callback(currentLoc - currentSize - 1, x_start);
+            currentLoc = currentLoc - 1;
+          }
+          else {
+            test = callback(currentLoc,x_start);
+          }
+        }
+
+        if (!test) return false;
+        currentLoc += 1;
+        currentSize += 1;
+      }
+      return true;
+    }
+
+    // Pushes ship location to array
+    var create_location = function(key,value) {
+      if (ship_loc[key] == undefined) ship_loc[key] = [];
+      ship_loc[key].push(value);
+    }
+
+    // Checks if the position is a potential spot for new ship
+    var position_is_empty = function(y,x) {
+      if (board[y][x] != "x") return false;
+      else return true;
+    }
+
+    // Adds ship location to the board
+    var add_to_board = function(y,x) {
+      board[y][x] = "O";
+      return true;
+    }
+
+    // Creates ship hash, where keys are y location and values
+    // are the x location
+    var fill_ship = function(y,x) {
+      create_location(y,x);
+      return true;
+    }
+
+    create_ship_location();
+    while (!loop_through_board(position_is_empty)) {
+      create_ship_location();
+    }
+    loop_through_board(add_to_board);
+    loop_through_board(fill_ship);
+}
+
+function Board(size) {
+    this.size = size;
+    var total_hits = 0;
+    var needed_hits = 0;
+    var ships = [];
+
+    for (var i=1; i<=size; i++) {
+      board[i] = new Array(size);
+      board[i].fill("x");
+    }
+
+    var fill_ships = function() {
+      var ship1 = new Ship(2, 10);
+      var ship2 = new Ship(3, 10);
+      var ship3 = new Ship(4, 10);
+      var ship4 = new Ship(5, 10);
+      ships.push(ship1);
+      ships.push(ship2);
+      ships.push(ship3);
+      ships.push(ship4);
+      for (x in ships) {
+        needed_hits += ships[x].ship_size;
+      }
+    }
+
+    fill_ships();
+
+    this.guess_board = function(y,x) {
+      x = x-1;
+      isHit = false;
+      for (i in ships) {
+        var current_ship = ships[i].ship_loc;
+
+        if (current_ship[y] != undefined) {
+          var location_of_guess = current_ship[y].indexOf(x);
+          if (location_of_guess != -1) {
+            board[y][x+1] = "H";
+            total_hits += 1;
+            isHit = true;
+          }
+        }
+        else if (board[y][x+1] != "H") {
+          board[y][x+1] = "m";
+            isHit = false;
+        }
+      }
+      return isHit;
+    }
+
+    this.print = function() {
+      var current_board = " 1  2  3  4  5  6  7  8  9  10\n ";
+      for (var i=1; i<=this.size; i++) {
+        for (var j=1; j<=this.size; j++) {
+          if (board[i][j] === "H") current_board += "H  ";
+          else if (board[i][j] === "m") current_board += "m  ";
+          else current_board += "x  ";
+        }
+        current_board += "\n ";
+      }
+      return current_board;
+    }
+
+    this.did_you_win =  function() {
+      console.log('Total hits: ' + total_hits);
+      if (total_hits >= needed_hits) {return true;}
+      else {return false;}
+    }
+}
+
+var battleship_board = new Board(10);
+function startGame() {
+  battleship_board = new Board(10);
+}
+
+var miss_array = ["Not hiding here.", "You must be new to sea serpent tracking...", "Maybe you should try using some sea serpent bait!", "Nope, no luck there."];
+var hit_array = ["Aw, what a cute little sea monster!", "You found her!", "You are pretty good at this.", "Hey there nessie!"];
+function guess(element_id) {
+    var row = document.getElementById(element_id);
+    var location = element_id.toString().split(" ");
+    var isHit = battleship_board.guess_board(parseInt(location[0]),parseInt(location[1]));
+
+    var random_status = Math.floor((Math.random() * 4));
+
+    if (isHit) {
+      row.style.backgroundColor = "#8BCB1D";
+      document.getElementById("status").innerHTML = hit_array[random_status];
+    }
+    else {
+      row.style.backgroundColor = "#1C1E5E";
+      document.getElementById("status").innerHTML = miss_array[random_status];
+    }
+    if (battleship_board.did_you_win() === true) {
+      document.getElementById("status").innerHTML = "You found all the sea monsters! Thanks for helping me track them down, let's get them home.";
+    }
+}
+</script>
+
+</body>
+</html>

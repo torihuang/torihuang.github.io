@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='../imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet/blog.css">
+  <title>Tori Huang Blog</title>
+</head>
+<body>
+
+  <header>
+    <a href="http://torihuang.github.io">
+      <div id="logo">
+        <p id="name">Tori Huang</p>
+        <p id="developer">developer</p>
+        <p id="and">&</p>
+        <p id="engineer">engineer</p>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../praise/index.html">Praise</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="line"></div>
+
+  <article>
+    <h1>Ruby Classes vs. JavaScript Constructors</h1>
+    <h2>2/11/16</h2>
+
+
+
+    <p>
+      First, let's talk about what Ruby and JavaScript have in common. They are both object-oriented languages, meaning they are based on objects; data structures that each contain their own ecosystem of attributes and methods. In order to complete a task in an object oriented language, you must create and manipulate these objects.
+    </p>
+    <p>
+      Go in to further detail and Ruby and JavaScript differ. Ruby utilizes class-based programming (aka class-orientation), while JavaScript utilizes prototype-based programming (aka prototype-orientation or instance-based programming). What is class-orientation? It is a style of object-oriented programming, that allows you to create <em>classes</em> of objects. All objects must be some instance of a class. When you create a new string, for example, that string is simply a child of the parent String class. That string has a set of pre-defined methods that cannot be changed. This is the most popular type of object-oriented programming (OOP). Just like the puppies below are children of the golden retriever, Ruby objects are children of their parent class.
+    </p>
+
+    <h3>Ruby Classes - Objects are Instances of Classes</h3>
+    <img src="imgs/dog-children.png" alt="Ruby Classes as Dog Children">
+
+    <p>
+      While class-based programming allows you to create <em>classes</em> of objects, prototype-based language allows you to create clones of existing objects. The same type of parent / child relationship does not exist in prototype-based language. When you create a new object, a clone of a previous object, you have full control over that object's attributes and methods. While the newly cloned object will inherit the same properties and methods from the original object, you can actually create or remove the new object's methods. While Ruby objects are instances of their parent class, just as the dogs in the photo above are children of their mom, JavaScript objects are clones of another object declared through a constuctor. The clones are similar, they initially inherited the same attributes and methods, however, they are more flexible in adding methods or attributes after they have been initially defined.
+    </p>
+
+    <h3>JavaScript Constructors - Objects are Clones of Objects</h3>
+    <img src="imgs/dog-clones.png" alt="JavaScript Constructors as Dog Clones">
+
+    <p>
+       For example, let's consider a farm full of animals, where each animal is a class / constructor. In Ruby, cows, chickens, and pigs would each be a child of the animal class. The types of attributes and methods they could have would be inherited from this class. In JavaScript, cows, chickens, and pigs would be clones of the animal constructor, with each animal extended to have attributes and methods specific to themselves in addition to the ones inherited when cloned.
+    </p>
+
+    <p>
+      This increased control with prototype-orientation comes at a cost - decreased organization. With prototype-orientation, there is more potential for customzation. You can change the methods and attributes of each individual object after it has been created. The heirarchy of parent vs childen is less clear. When objects are simply clones of other objects, who is the parent? The child? Where is the order? With class-orientation, that relationship is clear. All objects are children of some parent class. However, while class-orientation provides us with a clear heirarchy and therefore more strucutred code, prototype-orientation hands developers the freedom to build more powerful programs. In a progrmaming type defined as object-oriented, more control over your objects means more control over your code.
+    </p>
+    <p>
+      This brings us back to the difference between Ruby classes and JavaScript constructors. Now that we have an increased understanding of class vs. prototype orientation, we can understand that Ruby classes are built to create objects that are instances of a class, while JavaScript constructors are built to be cloned. While they are similar in many ways, both contain basic attributes and methods that will be inherited by their children, they differ in their purpose and flexibility. It all boils down to this: <strong>Ruby classes allow you to create objects that are instances of that class, that inherit all their attributes and methods. JavaScript constructors allow you to create clones of an object, that inherit all that object's attributes and methods, while giving you the freedom to add/remove attributes and methdods after the object is created.</strong>
+    </p>
+    <p>
+      It's as simple as that! There are, of course, many differences in syntax. Those are just semantics. If you truly understand <em>why</em> Ruby classes and JavaScript constructors are different, you will have a much better grasp of the two languages as a whole. If you are still confused, or if you do want to take a look at syntax differences, please check out the resources below! The links listed in Resources are where I found the information to write this blog post.
+    </p>
+
+    <section>
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-Orientation Programming - Wikipedia</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Class-based_programming">Class-Based Programming - Wikipedia</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Prototype-based_programming#Criticism">Prototype-Based Programming - Wikipedia</a></li>
+        <li><a href="http://nishacodes.tumblr.com/post/74145415546/javascript-vs-ruby-object-oriented-programming">Ruby Classes vs. JavaScript Constructors Syntax - nishacodes</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model">Class-Based vs. Prototype-Based Languages - Mozilla Developer Network</a></li>
+        <li><a href="http://stumbling-poncho.deviantart.com/art/Grasping-Prototype-Based-Programming-269761176">Grasping Prototype Based Programing with a Comic</a></li>
+      </ul>
+    </section>
+  </article>
+
+  <footer>
+    <p id="copyright">Copyright © 2016</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/victoriahuangbrauer"><img src="../imgs/linkedin-icon.png" class="contact-icon" alt="LinkedIn"></a></li>
+      <li><a href="https://github.com/torihuang"><img src="../imgs/github-icon.png" class="contact-icon" alt="GitHub"></a></li>
+      <li><a href="tel:708-212-3489"><img src="../imgs/call-icon.png" class="contact-icon" alt="Call"></a></li>
+      <li><a href="mailto:victoriahuang20@gmail.com" target="_top"><img src="../imgs/email-icon.png" class="contact-icon" alt="Email"></a></li>
+    </ul>
+  </footer>
+</body>
+</html>

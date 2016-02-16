@@ -1,0 +1,81 @@
+@font-face {
+  font-family: AvenirBook;
+  src: url("http://torihuang.github.io/blog/fonts/AvenirLTStd-Book.otf");
+}
+
+@font-face {
+  font-family: SignPainterHouseScript;
+  src: url("http://torihuang.github.io/blog/fonts/SignPainter-HouseScript.ttf");
+}
+
+/*GENERAL*/
+
+body {
+  font-family: AvenirBook;
+  color: white;
+  background-color: #F1F1F1;
+  max-width: 98%;
+  top: 3px;
+}
+
+a {
+  color: #3ACCA9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5E1C45;
+}
+
+/* LOGO */
+
+.line {
+  width: 33%;
+  display: inline-block;
+  border: 1px solid #393939;
+  float: left;
+  vertical-align: middle;
+}
+
+#logo {
+  width: 33%;
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+  color: #393939;
+  float: left;
+}
+
+#name {
+  font-family: SignPainterHouseScript;
+  font-size: 60px;
+  display: block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-bottom: 5px;
+}
+
+#developer {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#and {
+  font-family: SignPainterHouseScript;
+  text-align: center;
+  font-size: 40px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#engineer {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}

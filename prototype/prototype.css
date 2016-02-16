@@ -1,0 +1,158 @@
+@font-face {
+  font-family: AvenirBook;
+  src: url("http://torihuang.github.io/blog/fonts/AvenirLTStd-Book.otf");
+}
+
+@font-face {
+  font-family: SignPainterHouseScript;
+  src: url("http://torihuang.github.io/blog/fonts/SignPainter-HouseScript.ttf");
+}
+
+/*GENERAL*/
+
+html {
+  background: url(imgs/me.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: AvenirBook;
+  color: white;
+}
+
+a {
+  color: #3ACCA9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5E1C45;
+}
+
+/* LOGO */
+
+#logo {
+  display:block;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+}
+
+#name {
+  font-family: SignPainterHouseScript;
+  font-size: 60px;
+  display: block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-bottom: 5px;
+}
+
+#developer {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#and {
+  font-family: SignPainterHouseScript;
+  text-align: center;
+  font-size: 40px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#engineer {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+/* CONTACT ICONS */
+
+#contact-info {
+  max-width: 50%;
+  margin: 0px auto;
+  list-style-type: none;
+  display:block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+#contact-info li {
+  display: inline;
+}
+
+.contact-icon {
+  width: 50px;
+  border-radius: 25px;
+}
+
+.contact-icon:hover {
+  background-color: #3ACCA9;
+}
+
+/* PARAGRAPH INTRO */
+
+#intro {
+  margin: 0px auto;
+  text-align: center;
+  max-width: 50%;
+  font-size: 20px;
+}
+
+/* NAVIGATION LINKS */
+
+.navigation {
+  vertical-align: middle;
+}
+
+.navigation a {
+  color: white;
+}
+
+.navigation a:hover {
+  color: #3ACCA9;
+}
+
+#hello {
+  /*font-family: SignPainterHouseScript;*/
+/*  font-size: 40px;*/
+  vertical-align: middle;
+  font-size: 25px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+}
+
+#projects {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 45%;
+}
+
+#blog {
+  vertical-align: middle;
+  font-size: 25px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.arrow {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  font-size: 50px;
+  vertical-align: middle;
+}

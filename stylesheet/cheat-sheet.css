@@ -1,0 +1,14 @@
+table {
+  display: block;
+  max-width: 60%;
+  border-spacing: 0px;
+  border: 0px;
+}
+
+td {
+    border: 0px solid black;
+    border-radius: 0px;
+    padding: 0px;
+    text-align: center;
+}
+

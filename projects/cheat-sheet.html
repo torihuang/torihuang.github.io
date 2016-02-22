@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet/cheat-sheet.css">
+  <title>Tori Huang</title>
+</head>
+<body>
+
+  <header>
+    <a href="http://torihuang.github.io">
+      <div id="logo">
+        <p id="name">Tori Huang</p>
+        <p id="developer">developer</p>
+        <p id="and">&</p>
+        <p id="engineer">engineer</p>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="../about-me/index.html">About Me</a></li>
+        <li><a href="praise/index.html">Praise</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>SQL Cheat Sheet</h1>
+
+    <h2>Database Example</h2>
+
+    <section>
+      <h2>Creating and Editing Tables</h2>
+      <pre><code>
+CREATE Table TallestTowers {
+  id INT,
+  state VARCHAR(200),
+  city VARCHAR(200),
+  name VARCHAR(200),
+  height INT,
+  floors INT,
+  year_built INT
+}
+
+NSERT INTO TallestTower (id, state, city, name, height, floors, year_built)
+VALUES (1, 'New York', 'New York City', 'One World Trade Center', '541', '104', '2013')
+...
+      </pre></code>
+
+
+      <table>
+        <th>
+          <td>State</td>
+          <td>City</td>
+          <td>Building</td>
+          <td>Height (m)</td>
+          <td>Floors</td>
+          <td>Year Built</td>
+        </th>
+        <tr>
+          <td>1</td>
+          <td>New York</td>
+          <td>New York City</td>
+          <td>One World Trade Center</td>
+          <td>541</td>
+          <td>104</td>
+          <td>2013</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Illinois</td>
+          <td>Chicago</td>
+          <td>Sears Tower</td>
+          <td>442</td>
+          <td>108</td>
+          <td>1974</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Georgia</td>
+          <td>Atlanta</td>
+          <td>Bank of America Plaza</td>
+          <td>311</td>
+          <td>55</td>
+          <td>1992</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>California</td>
+          <td>Los Angeles</td>
+          <td>U.S. Bank Tower</td>
+          <td>310</td>
+          <td>73</td>
+          <td>1989</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Pennsylvania</td>
+          <td>Philadelphia</td>
+          <td>Comcast Center</td>
+          <td>296</td>
+          <td>57</td>
+          <td>2008</td>
+        </tr>
+      </table>
+
+      <pre><code>
+UPDATE TallestTower SET name = 'Willis Tower' WHERE city ='Chicago'
+DELETE FROM TallestTower WHERE id = 5
+      </code></pre>
+
+      <table>
+        <th>
+          <td>State</td>
+          <td>City</td>
+          <td>Building</td>
+          <td>Height (m)</td>
+          <td>Floors</td>
+          <td>Year Built</td>
+        </th>
+        <tr>
+          <td>1</td>
+          <td>New York</td>
+          <td>New York City</td>
+          <td>One World Trade Center</td>
+          <td>541</td>
+          <td>104</td>
+          <td>2013</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Illinois</td>
+          <td>Chicago</td>
+          <td>Willis Tower</td>
+          <td>442</td>
+          <td>108</td>
+          <td>1974</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Georgia</td>
+          <td>Atlanta</td>
+          <td>Bank of America Plaza</td>
+          <td>311</td>
+          <td>55</td>
+          <td>1992</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>California</td>
+          <td>Los Angeles</td>
+          <td>U.S. Bank Tower</td>
+          <td>310</td>
+          <td>73</td>
+          <td>1989</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Retrieve Data</h2>
+      <h3>Basics</h3>
+      <pre><code>
+SELECT city, name, height FROM TallestTower
+SELECT city, name, height FROM TallestTower ORDER BY height DESC
+SELECT city, name, height FROM TallestTower WHERE height > 100
+        </code></pre>
+      <h3>More Compelex</h3>
+      <pre><code>
+SELECT DISTINCT city FROM TallestTower
+=>New York City, Chicago, Atlanta, Los Angeles, Philadelphia
+
+SELECT city, name, height FROM TallestTower WHERE height > 100 OR state = 'Georgia'
+        </code></pre>
+
+        <table>
+          <th>
+            <td>City</td>
+            <td>Building</td>
+            <td>Height (m)</td>
+          </th>
+          <tr>
+            <td></td>
+            <td>New York City</td>
+            <td>One World Trade Center</td>
+            <td>541</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Chicago</td>
+            <td>Sears Tower</td>
+            <td>442</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Atlanta</td>
+            <td>Bank of America Plaza</td>
+            <td>311</td>
+          </tr>
+        </table>
+
+        <code></pre>
+SELECT city, name, height FROM TallestTower WHERE height > 100 AND state = 'Illinois'
+=> Chicago    Willis Tower    541
+        </code></pre>
+
+        <table>
+          <th>
+            <td>City</td>
+            <td>Building</td>
+            <td>Height (m)</td>
+          </th>
+          <tr>
+            <td></td>
+            <td>Chicago</td>
+            <td>Sears Tower</td>
+            <td>442</td>
+          </tr>
+        </table>
+
+        <code></pre>
+SELECT city, name, height FROM TallestTower WHERE name LIKE '%Tower'
+
+
+        </code></pre>
+
+        <table>
+          <th>
+            <td>City</td>
+            <td>Building</td>
+            <td>Height (m)</td>
+          </th>
+          <tr>
+            <td></td>
+            <td>Chicago</td>
+            <td>Sears Tower</td>
+            <td>442</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>U.S. Bank Tower</td>
+            <td>310</td>
+          </tr>
+        </table>
+
+      </section>
+  <footer>
+    <p id="copyright">Copyright © 2016</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/victoriahuangbrauer"><img src="imgs/linkedin-icon.png" class="contact-icon" alt="LinkedIn"></a></li>
+      <li><a href="https://github.com/torihuang"><img src="imgs/github-icon.png" class="contact-icon" alt="GitHub"></a></li>
+      <li><a href="tel:708-212-3489"><img src="imgs/call-icon.png" class="contact-icon" alt="Call"></a></li>
+      <li><a href="mailto:victoriahuang20@gmail.com" target="_top"><img src="imgs/email-icon.png" class="contact-icon" alt="Email"></a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

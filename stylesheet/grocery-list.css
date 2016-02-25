@@ -1,0 +1,122 @@
+@font-face {
+  font-family: AvenirBook;
+  src: url("http://torihuang.github.io/blog/fonts/AvenirLTStd-Book.otf");
+}
+
+@font-face {
+  font-family: SignPainterHouseScript;
+  src: url("http://torihuang.github.io/blog/fonts/SignPainter-HouseScript.ttf");
+}
+
+body {
+  color: #353838;
+  background-color: rgba(162,204,199,0.2);
+  font-family: AvenirBook;
+  text-align: center;
+}
+
+h1 {
+  font-family: SignPainterHouseScript;
+  font-size: 60px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#status {
+  display: block;
+  opacity: 0.8;
+  list-style-type: none;
+  margin: 10px auto;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+}
+
+#status li {
+  display: inline-block;
+}
+
+.list-icon {
+  max-width: 40px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.list-icon:hover {
+  background-color: #3ACCA9;
+  cursor:pointer;
+}
+
+.big-category {
+  display: inline-block;
+  border: 1px solid #353838;
+  margin: 0px auto;
+  width: 19%;
+  height: 500px;
+  vertical-align: top;
+  background-color: rgba(255,255,255,0.8)
+/*  background-color: rgba(162,204,199,0.2);*/
+}
+.small-category {
+  display: block;
+  width: 100%;
+  height: 224px;
+}
+
+.add-item {
+  display: block;
+}
+
+.name-input {
+  width: 70%;
+}
+
+.quantity-input {
+  width: 10%;
+}
+
+.category-list {
+  height: 70%;
+  overflow: scroll;
+}
+
+.item:hover {
+  cursor:default;
+}
+
+footer {
+  text-align: center;
+  border-top: 0px solid #F28C01;
+  margin-top: 10px;
+  display: block;
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+  opacity: 0.8;
+}
+
+footer ul {
+  list-style-type: none;
+  display:inline-block;
+  vertical-align: middle;
+  margin: 0px auto;
+  padding: 0px 0px 0px 0px;
+  float: none;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0px auto;
+  padding: 0px 0px 0px 0px;
+  float: none;
+}
+
+.contact-icon {
+  width: 50px;
+  border-radius: 40px;
+}
+
+.contact-icon:hover {
+  background-color: #3ACCA9;
+}
+

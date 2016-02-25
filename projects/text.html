@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel='shortcut icon' href='../imgs/favicon.png' type='image/x-icon'/ >
+  <link rel="stylesheet" type="text/css" href="../stylesheet/grocery-list.css">
+  <title>Tori Huang</title>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="800">
+
+<script>
+
+// Create Item class
+function item(name, quantity) {
+  this.name = name;
+  this.quantity = quantity;
+  this.inCart = false;
+  this.locationAndSize = [0,0,0,0];
+}
+
+item.prototype.changeQuantity = function(new_quantity) {
+  this.quantity = new_quantity;
+};
+item.prototype.changeInCart = function() {
+  this.inCart = !this.inCart;
+};
+item.prototype.changeLocationAndSize = function(x,y,l,h) {
+  this.locationAndSize = [x,y,l,h];
+};
+
+// Declare initial list
+var list = {
+  produce: [new item("apple",3), new item("lettuce",1), new item("banana",5)],
+  pantry: [new item("rice",1), new item("beans",2)],
+  meat: [new item("chicken",1), new item("salmon",1), new item("smoked salmon",1), new item("beef",1)]
+};
+
+// Create canvas variables
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext('2d');
+
+
+  ctx.font = "60px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+
+  ctx.fillText("Grocery List", 300, 100);
+
+// Event listener for when canvas is clicked
+
+canvas.addEventListener('click', function() {
+  var x = event.pageX;
+  var y = event.pageY;
+  var clicked = checkForClickOnItem(x,y);
+  if (clicked) {drawList();}
+  console.log(clicked);
+}, false);
+
+// Blank button arrays
+
+function drawList() {
+  //drawTitle();
+  drawCategories();
+}
+
+function drawTitle() {
+  ctx.font = "60px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+
+  ctx.fillText("Grocery List", 300, 100);
+}
+
+function drawCategories() {
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  var centerLoc = 300;
+
+  var categoryLoc = 200;
+  for (var category in list) {
+    ctx.font = "30px arial";
+
+    ctx.fillText(category, centerLoc, categoryLoc);
+    categoryLoc += 35;
+
+    var categoryItems = list[category];
+    var itemLoc = categoryLoc;
+    ctx.font = "20px arial";
+    for (var item in categoryItems) {
+      if (categoryItems[item].inCart) {
+        ctx.fillStyle = '#D3D3D3';
+      }
+      ctx.fillText(categoryItems[item].name, centerLoc, itemLoc);
+      list[category][item].changeLocationAndSize(centerLoc,itemLoc,100,20);
+      itemLoc += 30;
+      ctx.fillStyle = 'black';
+    }
+
+    categoryLoc = itemLoc - 10;
+
+    drawPlusButton(centerLoc, categoryLoc);
+
+    categoryLoc += 50;
+  }
+}
+
+function drawPlusButton(x,y) {
+  ctx.rect(x,y,50,50);
+  ctx.strokeText("+", x, y+5);
+}
+
+function checkForClickOnItem(x,y) {
+  for (var category in list) {
+    var categoryItems = list[category];
+    for (var item in categoryItems) {
+      rectLoc = list[category][item].locationAndSize;
+      // console.log(x,y);
+      // console.log(rectLoc);
+      if (x >= rectLoc[0] && x <= rectLoc[0] + rectLoc[2] && y >= rectLoc[1] && y <= rectLoc[1] + rectLoc[3]) {
+          list[category][item].changeInCart();
+          // console.log(list[category]);
+          // console.log(list[category][item]);
+          return true;
+      }
+    }
+  }
+  return false;
+}
+
+drawList();
+</script>
+
+</body>
+</html>

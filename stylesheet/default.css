@@ -1,11 +1,11 @@
 @font-face {
   font-family: AvenirBook;
-  src: "../blog/fonts/AvenirLTStd-Book.otf";
+  src: url("../blog/fonts/AvenirLTStd-Book.otf");
 }
 
 @font-face {
   font-family: SignPainterHouseScript;
-  src: "../blog/fonts/SignPainter-HouseScript.ttf";
+  src: url("../blog/fonts/SignPainter-HouseScript.ttf");
 }
 
 body {
